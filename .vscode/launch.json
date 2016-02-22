@@ -24,7 +24,7 @@
 			"name": "Attach",
 			"type": "node",
 			"request": "attach",
-			"port": 8090,
+			"port": 8091,
 			"sourceMaps": false,
 			"outDir": null,
 			"localRoot": "${workspaceRoot}",
