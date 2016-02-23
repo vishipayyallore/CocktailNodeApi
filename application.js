@@ -4,7 +4,8 @@ var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser');
 
-var configfile = require('./env.json')
+//Mongo Database
+var mongoDataStore = mongoose.connect('mongodb://localhost:27017/CocktailDev');
 
 var application = express();
 
@@ -20,6 +21,10 @@ application.get('/api', function(req, res){
 application.get('/api/HealthCheck', function(req, res){
     res.send('Cocktail NodeJS API -> Health Check is Good!');
 });
+
+var Product = require('./models/product');
+var productRouter = require('./routes/productRoutes')(Product);
+application.use('/api/products', productRouter);
 
 var portNumber = process.env.PORT || 8091;
 var server = application.listen(portNumber, function() {
