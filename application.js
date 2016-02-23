@@ -19,11 +19,11 @@ application.use(bodyParser.urlencoded({
 }));
 
 application.get('/api', function(req, res){
-    res.send('Welcome to Cocktail NodeJS API!');
+    res.send('Welcome to Cocktail NodeJS API! ' + process.env.ENV );
 });
 
 application.get('/api/HealthCheck', function(req, res){
-    res.send('Cocktail NodeJS API -> Health Check is Good!');
+    res.send('Cocktail NodeJS API -> Health Check is Good! ' + process.env.ENV );
 });
 
 var Product = require('./models/product');
