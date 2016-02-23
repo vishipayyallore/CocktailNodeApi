@@ -18,6 +18,10 @@ application.use(bodyParser.urlencoded({
     extended: true
 }));
 
+application.get('/', function(req, res){
+    res.send('Welcome to Cocktail NodeJS API! ' + process.env.ENV );
+});
+
 application.get('/api', function(req, res){
     res.send('Welcome to Cocktail NodeJS API! ' + process.env.ENV );
 });
