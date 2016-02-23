@@ -4,6 +4,9 @@ var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser');
 
+var config = require('config');
+console.log( config.get('env.MONGO_URI') );
+
 //Mongo Database
 var mongoDataStore = mongoose.connect('mongodb://localhost:27017/CocktailDev');
 
@@ -26,7 +29,7 @@ var Product = require('./models/product');
 var productRouter = require('./routes/productRoutes')(Product);
 application.use('/api/products', productRouter);
 
-var portNumber = process.env.PORT || 8091;
+var portNumber = config.get('env.PORT') || 8091;
 var server = application.listen(portNumber, function() {
     console.log('Server running at http://127.0.0.1:'+ portNumber + '/ in Azure (' + process.env.ENV + process.env.MONGO_URI + ') environment' );
 });
