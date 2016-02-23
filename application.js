@@ -5,10 +5,11 @@ var express = require('express'),
     bodyParser = require('body-parser');
 
 var config = require('config');
-console.log( config.get('env.MONGO_URI') );
 
+var mongoConnectionString = config.get('env.MONGO_URI');
+console.log( mongoConnectionString );
 //Mongo Database
-var mongoDataStore = mongoose.connect('mongodb://localhost:27017/CocktailDev');
+var mongoDataStore = mongoose.connect(mongoConnectionString);
 
 var application = express();
 
