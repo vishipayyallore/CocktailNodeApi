@@ -9,7 +9,7 @@ var config = require('config');
 var mongoConnectionString = config.get('env.MONGO_URI');
 console.log( mongoConnectionString );
 //Mongo Database
-var mongoDataStore = mongoose.connect(mongoConnectionString);
+//var mongoDataStore = mongoose.connect(mongoConnectionString);
 
 var application = express();
 
