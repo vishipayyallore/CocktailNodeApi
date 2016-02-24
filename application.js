@@ -23,7 +23,7 @@ application.get('/api', function(req, res){
 });
 
 application.get('/api/HealthCheck', function(req, res){
-    res.send('Cocktail NodeJS API -> Health Check is Good! ');
+    res.send('Cocktail NodeJS API -> (Boris) Health Check is Good! ');
 });
 
 var Product = require('./models/product');
