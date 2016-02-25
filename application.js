@@ -30,7 +30,7 @@ var Product = require('./models/product');
 var productRouter = require('./routes/productRoutes')(Product);
 application.use('/api/products', productRouter);
 
-var portNumber = config.get('env.PORT');
+var portNumber = process.env.PORT || 8094;
 var server = application.listen(portNumber, function() {
     console.log('Server running ...' );
 });
