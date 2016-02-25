@@ -1,6 +1,6 @@
 {
     "env": {
-            "PORT": 8091,
+            "PORT": "8091",
             "ENV": "production",
             "MONGO_URI": "mongodb://40.117.38.149:27017/CocktailProd"
         }

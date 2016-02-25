@@ -1,6 +1,6 @@
 {
     "env": {
-            "PORT": 8094,
+            "PORT": "8094",
             "ENV": "development",
             "MONGO_URI": "mongodb://40.117.38.149:27017/CocktailDev"
         }
