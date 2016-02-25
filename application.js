@@ -31,9 +31,25 @@ var productRouter = require('./routes/productRoutes')(Product);
 application.use('/api/products', productRouter);
 
 //var portNumber = process.env.PORT || 8094;
-var portNumber = config.get('env.PORT') || 8094;
+var portNumber = normalizePort(config.get('env.PORT') || 8094);
 var server = application.listen(portNumber, function() {
     console.log('Server running ...' );
 });
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
 
 module.exports = application;
